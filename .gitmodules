@@ -1,0 +1,21 @@
+[submodule "toolchain/musl"]
+	path = toolchain/musl
+	url = https://github.com/open-ead/botw-lib-musl
+[submodule "lib/EventFlow"]
+	path = lib/EventFlow
+	url = https://github.com/open-ead/EventFlow
+[submodule "lib/NintendoSDK"]
+	path = lib/NintendoSDK
+	url = https://github.com/open-ead/nnheaders
+[submodule "lib/agl"]
+	path = lib/agl
+	url = https://github.com/open-ead/agl
+[submodule "lib/sead"]
+	path = lib/sead
+	url = https://github.com/open-ead/sead
+[submodule "tools/common"]
+	path = tools/common
+	url = https://github.com/open-ead/nx-decomp-tools
+[submodule "lib/xlink2"]
+	path = lib/xlink2
+	url = https://github.com/Nitr4m12/xlink2
