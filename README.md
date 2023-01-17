@@ -4,7 +4,7 @@ Repository to house Splatoon 2's decompiled binaries/files. Directory structure 
 
 # Building
 
-Follow the installation instructions on https://botw.link/contribute, replacing botw's nso for splatoon's nso.
+Follow the installation instructions on https://botw.link/contribute, replacing botw's nso for splatoon's nso. This will only work with the 1.0.0 executable.
 
 # DISCLAIMER
 As of now, this repository is **not** for a full-decompilation of Splatoon 2. This is mostly meant to help in decompilation of libraries for which Splatoon 2 has symbols for, such as [xlink2](https://github.com/Nitr4m12/xlink2). If you'd like to start a decompilation project using this repository as a base, you're welcome to fork it and tweak it as you like.
