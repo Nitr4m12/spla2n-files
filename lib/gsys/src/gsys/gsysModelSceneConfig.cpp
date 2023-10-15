@@ -268,8 +268,10 @@ ModelSceneConfig::ModelSceneConfig() {
     mReducedBuffer16Bit.init(false, "reduced_buffer_16bit", "縮小バッファ16bit", this);
     mReducedBufferEdgeAdjustBake.init(false, "reduced_buffer_edge_adjust_bake",
                                       "縮小バッファエッジ補正をテクスチャ焼付け", this);
+#ifdef UKING_NX_V150
     mReducedBufferBlurAdjustBake.init(false, "reduced_buffer_blur_adjust_bake",
                                       "縮小バッファブラー補正をテクスチャ焼付け", this);
+#endif
     mReducedBufferEdgeAdjust.init(false, "reduced_buffer_edge_adjust", "縮小バッファエッジ補正有効",
                                   this);
     mReducedBufferEdgeAdjustCoeff.init(2.0, "reduced_buffer_edge_adjust_coeff",

@@ -16,7 +16,7 @@ TARGET_ELF_PATH = setup.get_target_elf_path()
 def prepare_executable(original_nso: Optional[Path]):
     UNCOMPRESSED_V100_HASH = "729c2fc730c373a55844e95daa386a3f47f2db85a56ee0f0aa0bbe17011cdf42"
 
-    # The uncompressed v1.5.0 main NSO.
+    # The uncompressed v1.0.0 main NSO.
     TARGET_HASH = UNCOMPRESSED_V100_HASH
 
     if TARGET_PATH.is_file() and hashlib.sha256(TARGET_PATH.read_bytes()).hexdigest() == TARGET_HASH and TARGET_ELF_PATH.is_file():
@@ -24,7 +24,7 @@ def prepare_executable(original_nso: Optional[Path]):
         return
 
     if original_nso is None:
-        setup.fail("please pass a path to the NSO (refer to the readme for more details)")
+        setup.fail("Please provide a path to the NSO (refer to the readme for more details)")
 
     if not original_nso.is_file():
         setup.fail(f"{original_nso} is not a file")
@@ -61,7 +61,7 @@ def create_build_dir():
         return
 
     subprocess.check_call(
-        "cmake -GNinja -DCMAKE_BUILD_TYPE=RelWithDebInfo -DCMAKE_TOOLCHAIN_FILE=toolchain/ToolchainNX64.cmake -DCMAKE_CXX_COMPILER_LAUNCHER=ccache -B build/".split(" "))
+        ["cmake", "-GNinja", "-DCMAKE_BUILD_TYPE=RelWithDebInfo", "-DCMAKE_TOOLCHAIN_FILE=toolchain/ToolchainNX64.cmake", "-DCMAKE_CXX_COMPILER_LAUNCHER=ccache", "-B", str(build_dir)])
     print(">>> created build directory")
 
 
@@ -74,7 +74,7 @@ def main():
 
     setup.install_viking()
     prepare_executable(args.original_nso)
-    setup.set_up_compiler("4.0.1")
+    setup.set_up_compiler("3.9.1")
     create_build_dir()
 
 

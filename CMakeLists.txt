@@ -40,6 +40,8 @@ set(NN_WARE_MAJOR 1)
 set(NN_WARE_MINOR 6)
 set(NN_WARE_PATCH 1)
 
+include_directories(lib/aarch64)
+
 add_subdirectory(lib/NintendoSDK)
 target_link_libraries(blitz PUBLIC NintendoSDK)
 
@@ -55,14 +57,16 @@ target_link_libraries(blitz PUBLIC xlink2)
 add_subdirectory(lib/aal)
 target_link_libraries(blitz PRIVATE aal)
 
-# add_subdirectory(lib/gsys)
-# target_link_libraries(blitz PRIVATE gsys)
+add_subdirectory(lib/gsys)
+target_link_libraries(blitz PRIVATE gsys)
 
-add_subdirectory(lib/EventFlow)
-target_link_libraries(blitz PRIVATE evfl)
+#add_subdirectory(lib/EventFlow)
+#target_link_libraries(blitz PRIVATE evfl)
 
 add_subdirectory(lib/hkStubs)
 target_link_libraries(blitz PRIVATE hkStubs)
 
+
 add_subdirectory(src)
+
 
